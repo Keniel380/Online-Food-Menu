@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Administrator Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f2f2f2; /* Light gray background color */
+      padding: 20px;
+      color: #000; /* Black text color */
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 32px;
+      color: #ff1493; /* Bright pink heading color */
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th {
+      background-color: #ffb6c1; /* Light pink header background color */
+      color: #ff1493; /* Bright pink header text color */
+      padding: 10px;
+    }
+
+    td {
+      background-color: #ffe4e6; /* Lighter pink cell background color */
+      padding: 10px;
+    }
+
+    .menu-actions a {
+      background-color: #ff1493; /* Bright pink button background color */
+      color: #fff; /* White button text color */
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      margin: 0 5px;
+    }
+
+    .menu-actions a:hover {
+      background-color: #ff007f; 
+    }
+
+    
+    .add-menu-button {
+      margin-bottom: 20px;
+    }
+
+    .add-menu-button a {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #ff1493; /* Bright pink button background color */
+      color: #fff; /* White button text color */
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .add-menu-button a:hover {
+      background-color: #ff007f; /*  */
+    }
+  </style>
+</head>
+<body>
+  <h1>Menu Available</h1>
+
+  <div class="add-menu-button">
+    <a href="/menu/addMenu">ADD NEW MENU</a>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="menu : ${listMenus}">
+        <td>[[${menu.id}]]</td>
+        <td>[[${menu.name}]]</td>
+        <td>[[${menu.description}]]</td>
+        <td>[[${menu.price}]]</td>
+        <td class="menu-actions">
+          <a th:href="@{'/menu/edit/' + ${menu.id}}">EDIT</a>
+          <a th:href="@{'/menu/delete/' + ${menu.id}}">DELETE</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

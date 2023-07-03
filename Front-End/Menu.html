@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Restaurant Menu</title>
+  <style>
+    body {
+      background-color: #fce4ec;
+      color: #000;
+      font-family: Arial, sans-serif;
+    }
+    
+    .header {
+      background-color: #ff80ab;
+      padding: 10px;
+      text-align: center;
+      color: #000;
+    }
+    
+    .menu-container {
+      display: flex;
+      justify-content: center;
+    }
+    
+    .menu-item {
+      background-color: #ff4081;
+      margin-bottom: 20px;
+      padding: 20px;
+      text-align: center;
+      max-width: 400px;
+    }
+    
+    .menu-item h2 {
+      margin-top: 0;
+      color: #000;
+      font-size: 24px;
+    }
+    
+    .menu-item p {
+      margin-bottom: 10px;
+      color: #000;
+    }
+    
+    .scrolling-text {
+      overflow: hidden;
+      white-space: nowrap;
+      animation: scroll-left 10s linear infinite;
+    }
+    
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    
+    .menu-item img {
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1 class="scrolling-text">Welcome to Our Restaurant</h1>
+  </div>
+  
+  <div class="menu-container">
+    <div class="menu-item">
+      <img src="pizza.jpg" alt="Pizza Margherita" width="200" height="150">
+      <h2>Pizza Margherita</h2>
+      <p>A classic pizza topped with tomato sauce, mozzarella cheese, and fresh basil leaves.</p>
+      <p><span>Price:</span> 20000.0</p>
+    </div>
+    
+    <div class="menu-item">
+      <img src="burger.jpg" alt="Burger" width="200" height="150">
+      <h2>Classic Burger</h2>
+      <p>A juicy beef patty topped with cheese, lettuce, tomatoes, onions, and special sauce.</p>
+      <p><span>Price:</span> 15000.0</p>
+    </div>
+    
+    <div class="menu-item">
+      <img src="mojito.jpg" alt="Mojito" width="200" height="150">
+      <h2>Mojito</h2>
+      <p>A refreshing cocktail made with rum, lime juice, mint leaves, sugar, and soda water.</p>
+      <p><span>Price:</span> 10000.0</p>
+    </div>
+  </div>
+</body>
+</html>
